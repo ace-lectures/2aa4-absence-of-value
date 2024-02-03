@@ -1,0 +1,42 @@
+@startuml
+
+!include ./puml.style
+
+skinparam nodesep 75
+
+class Card {
+      + this(c: Color, v: Value)
+      + this()
+      --
+      + getColor(): Color[0..1]
+      + setColor(c: Color)
+      --
+      + getValue(): Value[0..1]
+      + setValue(v: Value)
+}
+
+Color "- color" <-* Card
+Card *-> "- value" Value
+
+enum Color {
+     GREEN
+     BLUE
+     RED
+     YELLOW
+     PURPLE
+     BROWN
+}
+
+enum Value {
+    NINE
+    EIGHT
+    SEVEN
+    SIX
+    FIVE
+    FOUR
+    THREE
+    TWO
+    ONE
+}
+
+@enduml

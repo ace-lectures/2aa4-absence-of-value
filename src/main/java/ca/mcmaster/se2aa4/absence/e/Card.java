@@ -1,4 +1,4 @@
-package e;
+package ca.mcmaster.se2aa4.absence.e;
 
 import java.util.Optional;
 

@@ -1,4 +1,4 @@
-package c;
+package ca.mcmaster.se2aa4.absence.c;
 
 public class Card {
 
@@ -18,13 +18,12 @@ public class Card {
         this.isJoker = true;
     }
 
-    public Color getColor() {
-        return color;
-    }
+    public Color getColor() { return color; }
+    public void setColor(Color color) { this.color = color; }
 
-    public Value getValue() {
-        return value;
-    }
+    public Value getValue() { return value; }
+    public void setValue(Value value) { this.value = value; }
+
 
     public boolean isJoker() { return isJoker; }
 

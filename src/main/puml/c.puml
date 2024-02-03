@@ -1,0 +1,47 @@
+@startuml
+
+!include ./puml.style
+
+skinparam nodesep 75
+
+class Card {
+      - isJoker?: Boolean
+      --
+      + this(c: Color, v: Value)
+      + this()
+      --
+      + getColor(): Color
+      + setColor(c: Color)
+      --
+      + getValue(): Value
+      + setValue(v: Value)
+      --
+      + isJoker?(): Boolean
+}
+note bottom: Joker initialized as ONE-BLUE
+
+Color "- color" <-* Card
+Card *-> "- value" Value
+
+enum Color {
+     GREEN
+     BLUE
+     RED
+     YELLOW
+     PURPLE
+     BROWN
+}
+
+enum Value {
+    NINE
+    EIGHT
+    SEVEN
+    SIX
+    FIVE
+    FOUR
+    THREE
+    TWO
+    ONE
+}
+
+@enduml

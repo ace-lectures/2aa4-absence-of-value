@@ -1,0 +1,51 @@
+@startuml
+
+!include ./puml.style
+
+skinparam nodesep 75
+
+
+class Card {
+      + this(c: Color, v: Value)
+      # this()
+      --
+      + getColor(): Color
+      + getValue(): Value
+}
+
+class Joker extends Card {
+    + this()
+    --
+    + ^getColor(): Color
+    + ^getValue(): Value
+    --
+    + setColor(c: Color)
+    + setValue(v: Value)
+}
+note right: UnsupportedOperationException\nthrown when get* called
+
+Color "~# color"<-* Card
+Card *-> "~# value"Value
+
+enum Color {
+     GREEN
+     BLUE
+     RED
+     YELLOW
+     PURPLE
+     BROWN
+}
+
+enum Value {
+    NINE
+    EIGHT
+    SEVEN
+    SIX
+    FIVE
+    FOUR
+    THREE
+    TWO
+    ONE
+}
+
+@enduml
